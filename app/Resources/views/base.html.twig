@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/monstyle.css')}}">
+        <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+        <div class="container-fluid">
+            {% block header %}
+            <header class="row">
+                <span class="col-sm-12 text-muted" style="font-size: 13px; margin-top: 5px;" >Ousmanendiaye352@gmail.com</span>
+                <span class="col-sm-12 trait">&nbsp;</span>
+                <div class="col-sm-12 row">
+                    <figure class="figure col-12 col-sm-2">
+                        <img src="{{asset('assets/images/logos/logo.png')}}" class="figure-img img-fluid rounded" alt="Gestion Employers">
+                        <figcaption class="figure-caption text-xs-right"></figcaption>
+                    </figure>
+                    <div class="col-12 col-sm-10 menu">
+                        {% block lesliens %}
+                        <ul class="nav justify-content-center row">
+                            <li class="nav-item col-sm-1 ele-menu active text-center">
+                                <a class="nav-link active" href="{{path('employer_index')}}">Accueil</a>
+                            </li>
+                            <li class="nav-item col-sm-3 ele-menu text-center">
+                                <a class="nav-link" href="{{path('employer_all')}}">Liste employers</a>
+                            </li>
+                            <li class="nav-item col-sm-2 ele-menu text-center">
+                                <a class="nav-link" href="{{path('employer_index')}}">Liste Services</a>
+                            </li>
+                            <li class="nav-item col-sm-2 ele-menu text-center">
+                                <a class="nav-link" href="{{path('employer_index')}}">À propos</a>
+                            </li>
+                            <li class="nav-item col-sm-2 ">
+                                <a name="" id="" class="btn btn-primary" href="#" role="button">Se connecter</a>
+                            </li>
+                            <li class="nav-item col-sm-2">
+                                <a name="" id="" class="btn btn-primary" href="{{path('employer_save')}}" role="button">S'inscrire</a>
+                            </li>
+                        </ul>
+                        {% endblock %}
+                    </div>
+                </div>
+                <span class="col-sm-12 trait">&nbsp;</span>
+
+            </header>
+            {% endblock %}
+            <div class="row">
+            {% block contenus %}
+                <section class="col-0 col-sm-3">
+                    &nbsp;
+                </section>
+                <section class="col-12 col-sm-9">
+                {% block main %}
+                {% endblock %}
+                </section>
+            {% endblock %}
+            </div>
+            {% block footer %}
+            {% endblock %}
+        </div>
+        {% endblock %}
+        {% block javascripts %}
+        <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        {% endblock %}
+    </body>
+</html>

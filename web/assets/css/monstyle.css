@@ -1,0 +1,17 @@
+.trait {
+    border-top: 1px solid rgb(214, 205, 205);
+    margin: 5px 0px 5px 0px;
+}
+
+.menu ul li.active {
+    border-bottom: 2px solid #007bff;
+}
+
+.ele-menu:hover {
+    border-bottom: 2px solid #007bff;
+}
+
+.error-404-text h1 {
+    font-size: 110px;
+    color: #007bff;
+}

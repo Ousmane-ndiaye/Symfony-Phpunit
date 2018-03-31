@@ -1,0 +1,3 @@
+gestion_employer:
+    resource: '@GestionBundle/Controller/EmployersController.php'
+    type: annotation

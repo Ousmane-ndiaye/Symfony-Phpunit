@@ -1,0 +1,52 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Portail employers{% endblock %}
+
+{% block lesliens %}
+<ul class="nav justify-content-center row">
+    <li class="nav-item col-sm-1 ele-menu text-center">
+        <a class="nav-link active" href="{{path('employer_index')}}">Accueil</a>
+    </li>
+    <li class="nav-item col-sm-3 ele-menu active text-center">
+        <a class="nav-link" href="{{path('employer_all')}}">Liste employers</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">Liste Services</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">À propos</a>
+    </li>
+    <li class="nav-item col-sm-2">
+        <a name="" id="" class="btn btn-primary" href="#" role="button">Se connecter</a>
+    </li>
+    <li class="nav-item col-sm-2">
+        <a name="" id="" class="btn btn-primary" href="{{path('employer_save')}}" role="button">S'inscrire</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row"  style="margin: auto; border: 1px solid #007bff; width: 245px; padding: 10px;">
+    {{ form_start(form) }}
+        <div class="col-sm-12">
+            {{ form_label(form.matricule) }}{{ form_widget(form.matricule,{'attr': {'class': 'task_field', 'readonly':'true'}}) }}
+        </div>
+        <div class="col-sm-12">
+            {{ form_label(form.nomcomplet) }}{{ form_widget(form.nomcomplet,{'attr': {'class': 'task_field'}}) }}
+        </div>
+        <div class="col-sm-12">
+            {{ form_label(form.birthday) }}{{ form_widget(form.birthday) }}
+        </div>
+        <div class="col-sm-12">
+            {{ form_label(form.idservice) }}{{ form_widget(form.idservice) }}
+        </div>
+        <div class="col-sm-12">
+        {{ form_widget(form.save,{'attr': {'class': 'btn btn-primary'}}) }}
+        <a class="btn btn-success" href="{{path('employer_all')}}" role="button">Annuler</a>
+        </div>
+    {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

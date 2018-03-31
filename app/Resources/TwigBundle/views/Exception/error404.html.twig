@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Page inconnu{% endblock %}
+
+{% block lesliens %}
+<ul class="nav justify-content-center row">
+    <li class="nav-item col-sm-1 ele-menu text-center">
+        <a class="nav-link active" href="{{path('employer_index')}}">Accueil</a>
+    </li>
+    <li class="nav-item col-sm-3 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_all')}}">Liste employers</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">Liste Services</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">À propos</a>
+    </li>
+    <li class="nav-item col-sm-2">
+        <a name="" id="" class="btn btn-primary" href="#" role="button">Se connecter</a>
+    </li>
+    <li class="nav-item col-sm-2">
+        <a name="" id="" class="btn btn-primary" href="{{path('employer_save')}}" role="button">S'inscrire</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block contenus %}
+<div class="col-sm-2">
+    &nbsp;
+</div>
+<div class="col-12 col-sm-8">
+    <div class="error-404-text text-center">
+        <h1>Erreur 404</h1>
+    </div>
+    <div class="error-404-message text-center">
+        <h4>Désolé, la page que vous cherchez est soite déplacée ou supprimée !</h4>
+    </div>
+    <div class="justify-content-center text-center">
+        <a class="btn btn-primary" href="{{path('employer_index')}}" role="button">Accueil</a>
+    </div>
+</div>
+<div class="col-sm-2">
+</div>
+{% endblock %}

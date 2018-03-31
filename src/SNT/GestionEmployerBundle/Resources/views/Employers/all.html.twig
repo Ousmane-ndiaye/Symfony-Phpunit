@@ -1,0 +1,56 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Portail employers{% endblock %}
+
+{% block lesliens %}
+<ul class="nav justify-content-center row">
+    <li class="nav-item col-sm-1 ele-menu text-center">
+        <a class="nav-link active" href="{{path('employer_index')}}">Accueil</a>
+    </li>
+    <li class="nav-item col-sm-3 ele-menu active text-center">
+        <a class="nav-link" href="{{path('employer_all')}}">Liste employers</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">Liste Services</a>
+    </li>
+    <li class="nav-item col-sm-2 ele-menu text-center">
+        <a class="nav-link" href="{{path('employer_index')}}">À propos</a>
+    </li>
+    <li class="nav-item col-sm-2 ">
+        <a name="" id="" class="btn btn-primary" href="#" role="button">Se connecter</a>
+    </li>
+    <li class="nav-item col-sm-2">
+        <a name="" id="" class="btn btn-primary" href="{{path('employer_save')}}" role="button">S'inscrire</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block main %}
+<table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse table-responsive">
+    <thead class="thead-inverse|thead-default">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">PRÉNOM ET NOM</th>
+            <th class="text-center">MATRICULE</th>
+            <th class="text-center">DATE DE NAISSANCE</th>
+            <th class="text-center">SERVICE</th>
+            <th class="text-center">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employer in lesEmployers %}
+        <tr class="employer">
+            <td scope="row">{{ loop.index }}</td>
+            <td>{{ employer.nomComplet }}</td>
+            <td>{{ employer.matricule }}</td>
+            <td>{{ employer.birthDay }}</td>
+            <td>{{ employer.idservice }}</td>
+            <td>
+                <a class="btn btn-info" href="{{path('employer_edit',{id:employer.idEmployer})}}" role="button">Modifier</a>
+                <a class="btn btn-danger" href="{{path('employer_remove',{id:employer.idEmployer})}}" role="button">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Bienvenue dans le portail employer</h1>
+        <ul class="liens">
+            <li>
+                <a href="{{path('employer_all')}}">Lister les employers</a>
+            </li>
+            <li>
+                <a href="{{path('employer_save')}}">Ajouter un employer</a>
+            </li>
+            <li>
+                <a href="{{path('employer_search')}}">Rechercher un employer</a>
+            </li>
+        <ul>
+    </div>
+{% endblock %}

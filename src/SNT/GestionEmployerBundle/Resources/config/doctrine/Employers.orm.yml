@@ -1,0 +1,50 @@
+SNT\GestionEmployerBundle\Entity\Employers:
+    type: entity
+    table: Employers
+    indexes:
+        idService:
+            columns:
+                - idService
+    id:
+        idemployer:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idEmployer
+            generator:
+                strategy: IDENTITY
+    fields:
+        matricule:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        nomcomplet:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: nomComplet
+        birthday:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: birthDay
+    manyToOne:
+        idservice:
+            targetEntity: Service
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idService:
+                    referencedColumnName: idService
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

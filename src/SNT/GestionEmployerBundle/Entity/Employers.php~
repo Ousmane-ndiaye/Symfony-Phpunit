@@ -1,0 +1,57 @@
+<?php
+
+namespace SNT\GestionEmployerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Employers
+ *
+ * @ORM\Table(name="Employers", indexes={@ORM\Index(name="idService", columns={"idService"})})
+ * @ORM\Entity
+ */
+class Employers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEmployer", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idemployer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matricule", type="string", length=30, nullable=false)
+     */
+    private $matricule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomComplet", type="string", length=50, nullable=false)
+     */
+    private $nomcomplet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="birthDay", type="string", length=10, nullable=false)
+     */
+    private $birthday;
+
+    /**
+     * @var \SNT\GestionEmployerBundle\Entity\Service
+     *
+     * @ORM\ManyToOne(targetEntity="SNT\GestionEmployerBundle\Entity\Service")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idService", referencedColumnName="idService")
+     * })
+     */
+    private $idservice;
+
+
+}
+
